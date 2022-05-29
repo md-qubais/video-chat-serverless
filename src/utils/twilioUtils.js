@@ -9,6 +9,10 @@ import {
 } from "twilio-video";
 import { setMessages, setShowOverlay } from "../store/actions";
 
+
+  // "proxy": "https://videochatgytworkz.herokuapp.com"
+
+
 const audioConstraints = {
   video: false,
   audio: true,
@@ -29,7 +33,7 @@ export const getTokenFromTwilio = async (setAccessToken, identity) => {
   const randomId = uuidv4();
 
   const response = await axios.get(
-    `/api/token-service?identity=${randomId}${identity}`
+    `https://videochatapplication-9029-dev.twil.io/token-service?identity=${randomId}${identity}`
   );
 
   const data = response.data;
@@ -85,7 +89,7 @@ export const connectToRoom = async (
 
 export const checkIfRoomExists = async (roomId) => {
   const response = await axios.get(
-    `/api/room-exists?roomId=${roomId}`
+    ` https://videochatapplication-9029-dev.twil.io/room-exists?roomId=${roomId}`
   );
 
   return response.data.roomExists;
