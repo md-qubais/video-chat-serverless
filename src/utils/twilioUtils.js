@@ -89,7 +89,7 @@ export const connectToRoom = async (
 
 export const checkIfRoomExists = async (roomId) => {
   const response = await axios.get(
-    ` https://videochatapplication-9029-dev.twil.io/room-exists?roomId=${roomId}`
+    `https://videochatapplication-9029-dev.twil.io/room-exists?roomId=${roomId}`
   );
 
   return response.data.roomExists;
